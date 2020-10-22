@@ -1,0 +1,82 @@
+.account-selector .accounts{
+    padding-top: 22px;
+    /*width: 100%;*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.account-selector{
+    margin-top: 61px;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-selector .profile{
+    margin-left: 12px;
+    margin-right: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.account-selector .title{
+    /*width: 100%;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 45px;
+    line-height: 54px;
+    font-family: sans-serif;
+    color: white;
+    margin-top: 0;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.account-selector .name{
+    color: grey;
+    text-align: center;
+    font-size: 17px;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 10px;
+    font-family: "bello-pro-1", "bello-pro-2", sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.account-selector .avatar{
+    height: 10vw;
+    width: 10vw;
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 84px;
+    min-width: 84px;
+    border-radius: 4px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-sizing: border-box;
+}
+
+.account-selector .add-profile-icon{
+    color: gray;
+    font-size: 82px !important;
+    padding: 25px;
+    padding-top: 20px;
+}
+
+.account-selector .add-profile-icon:hover{
+    background-color: white;
+}
+
+.account-selector .avatar:hover{
+    /*background-color: white;*/
+    outline: solid 2px white;
+}
+
+.account-selector .avatar:hover +.name{
+    color: white;
+}

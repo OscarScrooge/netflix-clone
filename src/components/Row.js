@@ -1,0 +1,63 @@
+import React, {useEffect, useState} from 'react';
+import axios from '../axios/axios';
+import YouTube from "react-youtube";
+import movieTrailer from 'movie-trailer';
+import '../style/Row.css';
+import {Link} from "react-router-dom";
+
+function Row({title,fetchURL,isLargeRow,isMediumRow}){
+
+    const [movies,setMovies] = useState([]);
+    const [trailerURL,setTrailerURL] = useState("");
+    const imageBasePath= "https://image.tmdb.org/t/p/original";
+
+    const  opts ={
+      height: "390",
+      width: "100%",
+      playerVars :{
+          //https://developers.google.com/youtube/player_parameters
+          autoplay:1
+      }
+    };
+
+    useEffect(()=>{
+        const request = axios.get(fetchURL);
+        request.then(movies => setMovies(movies.data.results));
+    },[movies]);
+
+    const handleClick=(movie)=>{
+
+        if (trailerURL){
+              setTrailerURL('');
+          }else{
+              movieTrailer(movie?.title || movie?.original_title || "")
+                  .then((url)=>{
+                      const urlParams = new URLSearchParams(new URL(url).search);
+                      setTrailerURL(urlParams.get('v'));
+                  }).catch((error)=>console.log(error));
+          }
+    };
+
+    return (
+        <div>
+
+            <h2 className="row-title">{title}</h2>
+            <div className="movie-posters">
+            {
+              movies.map((movie) =>
+                    <img
+                        onClick={event => handleClick(movie)}
+                        className={`movie-poster ${isLargeRow && "movie-poster-large"} ${isMediumRow && "movie-poster-medium"}`}
+                        src={`${imageBasePath}${isLargeRow ?movie.poster_path:movie.backdrop_path}`}
+                        alt={movie.release_date}
+                        key={movie.id}
+                    />
+                 )
+            }
+            </div>
+            {trailerURL && <YouTube videoId={trailerURL} opts={opts}/>}
+        </div>
+    );
+}
+
+export default Row;

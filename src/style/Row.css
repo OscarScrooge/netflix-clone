@@ -1,0 +1,51 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.movie-posters::-webkit-scrollbar {
+    display: none;
+}
+
+/*Hide scrollbar for IE, Edge and Firefox */
+.movie-posters {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.movie-posters{
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+}
+
+.movie-poster {
+    object-fit: contain;
+    width: 100%;
+    max-height: 100px;
+    /*height: 100px;*/
+    margin-right: 10px;
+    transition: transform 500ms;
+}
+
+.movie-poster-large {
+    max-height: 250px;
+    /*height: 250px;*/
+}
+
+.movie-poster-medium {
+    height: 150px;
+}
+
+.movie-poster:hover{
+    transform: scale(1.09);
+}
+
+
+/*aARREGLAR ESTO*/
+.row-title{
+    color: white;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 16px;
+    padding-left: 20px;
+}
