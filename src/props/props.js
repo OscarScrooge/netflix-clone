@@ -1,7 +1,0 @@
-
-export const API_KEY = '16d182e19f660fce83480d0eb49d0433';
-
-
-/*
-access_token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmQxODJlMTlmNjYwZmNlODM0ODBkMGViNDlkMDQzMyIsInN1YiI6IjVmOTA3MmZmZDlmNGE2MDAzOGQ4ZDFkYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d3VwnK3eBKG-u6RkpPpP7u8WKrYbOVW0c714hjefzGc'
-* */
